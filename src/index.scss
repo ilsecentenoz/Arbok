@@ -1,0 +1,116 @@
+@import "./styles/mixins.scss";
+
+@font-face {
+  font-family: "montserrat-regular";
+  src: url("./fonts/Montserrat-Regular.ttf");
+}
+
+html {
+  box-sizing: border-box;
+  // overflow-y: hidden;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "montserrat-regular";
+  background-size: cover;
+  font-family: "montserrat-regular", georgia, serif;
+  color: #5b5b5b;
+}
+
+.layout {
+  .header {
+    background-image: url("./images/bkg.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    min-height: 40vh;
+    img {
+      margin: 80px;
+      float: left;
+    }
+    @include media(xs) {
+      background-position: center;
+      img {
+        margin: 18px 40px;
+        width: 100px;
+      }
+    }
+    @include media(sm) {
+      background-position: center;
+    }
+  }
+  .contentGeneral {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    @include media(xs) {
+      grid-template-columns: 1fr;
+    }
+    @include media(sm) {
+      grid-template-columns: 1fr;
+    }
+
+    img {
+      width: 60%;
+      margin: auto;
+      @include media(xs) {
+        width: 90%;
+      }
+      @include media(sm) {
+        width: 65%;
+      }
+    }
+  }
+}
+
+footer {
+  width: 100%;
+  background-color: #818286;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  @include media(xs) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  img {
+    margin-left: 40px;
+    @include media(xs) {
+      margin-left: 20px;
+    }
+  }
+  div {
+    text-align: center;
+    a {
+      color: white;
+      text-decoration: none;
+      cursor: pointer;
+      @include media(xs) {
+        font-size: 12px;
+      }
+    }
+  }
+  .disclaimer {
+    display: flex;
+    img {
+      margin-right: 10px;
+    }
+    @include media(xs) {
+      p {
+        font-size: 10px;
+      }
+    }
+  }
+  ul {
+    margin-right: 40px;
+    display: inline-flex;
+    @include media(xs) {
+    }
+    li {
+      list-style-type: none;
+    }
+  }
+}
